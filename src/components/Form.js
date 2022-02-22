@@ -30,7 +30,7 @@ export default function Form(props) {
         <div>
             <h1 className={`d-sm-flex my-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>{props.heading}</h1>
             <div className="mb-3">
-                <textarea style={{ backgroundColor: props.mode === 'dark' ? '#212529' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} className="form-control" value={text} onChange={uppercaseOnChange} id="exampleFormControlTextarea1" rows="6" placeholder='Enter Text Here'></textarea>
+                <textarea style={{ backgroundColor: props.mode === 'dark' ? '#212529' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} className="form-control" value={text} onChange={uppercaseOnChange} id="exampleFormControlTextarea1" rows="3" placeholder='Enter Text Here'></textarea>
             </div>
             <div className="d-sm-flex">
                 <button type="button" className={`btn btn-${props.mode === 'light' ? 'primary': 'light'} text-${props.mode === 'light' ? 'white': 'black'}`} onClick={uppercaseOnClick}>Uppercase</button>
