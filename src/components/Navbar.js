@@ -32,10 +32,17 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
-          <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark': 'light'}`}>
-            <input className="form-check-input" onClick={props.toggleMode} style={{backgroundColor: props.mode === 'light' ? 'white': 'black', border: props.mode === 'light' ? '1px solid rgba(0,0,0)' : '1px solid rgba(255,255,255)', backgroundImage: props.mode === 'light' ? `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0)'/></svg>")` : `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(255, 255, 255)'/></svg>")`}} type="checkbox" role="switch" id={props.btnCheck} checked={props.check} />
-            <label className="form-check-label" htmlFor={props.btnCheck}>Enable Dark Mode</label>
-          </div>
+          {
+            (props.mode == 'light') ? <div className="form-check form-switch text-dark">
+              <input className="form-check-input" onClick={props.toggleMode} style={{ backgroundColor: 'white', border: '1px solid rgba(0,0,0)', backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0)'/></svg>")` }} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+            </div> :
+              <div className="form-check form-switch text-light">
+                <input className="form-check-input" onClick={props.toggleMode} style={{ backgroundColor: 'black', border: '1px solid rgba(255,255,255)', backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(255, 255, 255)'/></svg>")` }} type="checkbox" role="switch" id="flexSwitchCheckChecked" defaultChecked />
+                <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Enable Dark Mode</label>
+              </div>
+          }
+
         </div>
       </div>
     </nav>
