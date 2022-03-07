@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import './navbar.css'
 
 export default function Navbar(props) {
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode == 'light' ? 'light' : 'dark'}`} style={{ backgroundColor: props.mode == 'light' ? 'white' : 'rgb(39, 43, 51)' }}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           {props.title}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,24 +24,26 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/about">
                 {props.aboutText}
-              </a>
+              </Link>
             </li>
           </ul>
           {
-            (props.mode == 'light') ? <div className="form-check form-switch text-dark">
-              <input className="form-check-input" onClick={props.toggleMode} style={{ backgroundColor: 'white', border: '1px solid rgba(0,0,0)', backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0)'/></svg>")` }} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
-            </div> :
+            (props.mode == 'dark') ?
               <div className="form-check form-switch text-light">
                 <input className="form-check-input" onClick={props.toggleMode} style={{ backgroundColor: 'black', border: '1px solid rgba(255,255,255)', backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(255, 255, 255)'/></svg>")` }} type="checkbox" role="switch" id="flexSwitchCheckChecked" defaultChecked />
                 <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Enable Dark Mode</label>
+              </div>
+              :
+              <div className="form-check form-switch">
+                <input className="form-check-input" onClick={props.toggleMode} style={{ border: '1px solid rgba(0,0,0)', backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0)'/></svg>")` }} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
               </div>
           }
 

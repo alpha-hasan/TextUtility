@@ -1,0 +1,23 @@
+.color-palatte {
+    display: flex;
+    margin-right: 50px;
+}
+.color {
+    border-radius: 10%;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.reset {
+    border: 1px solid black;
+}
+.red {
+    background-color: rgb(88, 11, 15);
+}
+.yellow {
+    background-color: rgb(189, 149, 30);
+}
+.green {
+    background-color: rgb(18, 42, 0);
+}
