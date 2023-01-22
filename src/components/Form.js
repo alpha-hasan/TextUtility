@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 export default function Form(props) {
     const [text, setText] = useState('');
-    const [wordCount, setWordCount] = useState(null)
     const uppercaseOnClick = () => {
         let upperCasedText = text.toUpperCase();
         setText(upperCasedText);
@@ -42,8 +41,8 @@ export default function Form(props) {
             </div>
             <div>
                 <h2 className={`d-sm-flex my-5 text-${props.mode === 'light' ? 'dark' : 'light'}`}>Details Of Your Text</h2>
-                <h5 className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>{text.split(/\s+/).filter((element) => { return element.length != 0 }).length} Words and {text.length} characters</h5>
-                <h5 className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>{0.008 * text.split(' ').filter((element) => { return element.length != 0 }).length} minutes to read</h5>
+                <h5 className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} Words and {text.length} characters</h5>
+                <h5 className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>{0.008 * text.split(' ').filter((element) => { return element.length !== 0 }).length} minutes to read</h5>
                 <h3 className={`my-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>Preview</h3>
                 <h6 className={`text-${props.mode === 'light' ? 'dark' : 'light'}`} style={{ maxWidth: "100%", wordBreak: 'break-word' }}>{!text ? 'Enter Text To Preview' : text}</h6>
             </div>

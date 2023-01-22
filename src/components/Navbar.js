@@ -5,7 +5,7 @@ import './navbar.css'
 
 export default function Navbar(props) {
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode == 'light' ? 'light' : 'dark'}`} style={{ backgroundColor: props.mode == 'light' ? 'white' : 'rgb(39, 43, 51)' }}>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode === 'light' ? 'light' : 'dark'}`} style={{ backgroundColor: props.mode === 'light' ? 'white' : 'rgb(39, 43, 51)' }}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           {props.title}
@@ -35,7 +35,7 @@ export default function Navbar(props) {
             </li>
           </ul>
           {
-            (props.mode == 'dark') ?
+            (props.mode === 'dark') ?
               <div className="form-check form-switch text-light">
                 <input className="form-check-input" onClick={props.toggleMode} style={{ backgroundColor: 'black', border: '1px solid rgba(255,255,255)', backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(255, 255, 255)'/></svg>")` }} type="checkbox" role="switch" id="flexSwitchCheckChecked" defaultChecked />
                 <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Enable Dark Mode</label>

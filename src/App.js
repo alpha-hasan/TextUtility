@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Form from './components/Form';
 import Alert from "./components/Alert";
@@ -37,11 +36,10 @@ function App() {
   // Theme Toggle Start
 
   const toggleMode = (e) => {
-    let event = e;
 
     // Dark / Light Theme Start
 
-    if (mode == 'light') {
+    if (mode === 'light') {
       setMode('dark');
       showAlert('Dark Mode Has Been Enabled', 'light');
       document.title = 'Text Utility - Dark Mode';
@@ -72,7 +70,7 @@ function App() {
 
     // Dark / Light Theme Start
 
-    if (localData == 'dark') {
+    if (localData === 'dark') {
       setMode('dark');
       setChecked(true);
       document.title = 'Text Utility - Dark Mode';
