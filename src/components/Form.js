@@ -25,7 +25,6 @@ export default function Form(props) {
             }
         }
     }
-    console.log(text.split(' '));
     const clearOnClick = () => {
         setText('');
     }
