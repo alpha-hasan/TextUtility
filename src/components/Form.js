@@ -29,11 +29,11 @@ export default function Form(props) {
     }
     return (
         <div>
-            <h1 className={`d-sm-flex my-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>{props.heading}</h1>
+            <h2 className={`d-sm-flex my-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>{props.heading}</h2>
             <div className="mb-3">
                 <textarea style={{ backgroundColor: props.mode === 'dark' ? 'rgb(34, 38, 42)' : props.mode === 'red' ? 'rgb(88, 11, 15)' : props.mode === 'yellow' ? 'rgb(189, 149, 30)' : props.mode === 'green' ? 'rgb(18, 42, 0)' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} className="form-control" value={text} onChange={onChange} id="exampleFormControlTextarea1" rows="3" placeholder='Enter Text Here'></textarea>
             </div>
-            <div className="d-sm-flex">
+            <div className="d-sm-flex d-flex justify-content-center align-items-center flex-wrap gap-4">
                 <button type="button" className={`btn btn-${props.mode === 'light' ? 'primary' : 'light'} text-${props.mode === 'light' ? 'white' : 'black'}`} onClick={uppercaseOnClick}>Uppercase</button>
                 <button type="button" className={`btn btn-${props.mode === 'light' ? 'success' : 'light'} mx-3 text-${props.mode === 'light' ? 'white' : 'black'}`} onClick={lowercaseOnClick}>Lowercase</button>
                 <button type="button" className={`btn btn-${props.mode === 'light' ? 'warning' : 'light'} text-${props.mode === 'light' ? 'white' : 'black'}`} onClick={capitalizeOnClick}>Captialize</button>
