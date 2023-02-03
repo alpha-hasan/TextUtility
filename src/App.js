@@ -102,7 +102,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Form heading='Enter Text To See The Magic' mode={mode} alert={alert} />} />
             <Route exact path="/about" element={<About mode={mode} alert={alert} />} />
-            <Route path="/*" element={<Form />} />
+            <Route path="/*" element={<Form heading='Enter Text To See The Magic' mode={mode} alert={alert} />} />
           </Routes>
         </div>
       </Router >
