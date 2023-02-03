@@ -100,10 +100,9 @@ function App() {
         <Alert alert={alert} />
         <div className='container my-3'>
           <Routes>
-            <Route exact path="/" element={<Form heading='Enter Text To See The Magic' mode={mode} alert={alert} />}>
-            </Route>
-            <Route exact path="/about" element={<About mode={mode} alert={alert} />}>
-            </Route>
+            <Route path="/" element={<Form heading='Enter Text To See The Magic' mode={mode} alert={alert} />} />
+            <Route exact path="/about" element={<About mode={mode} alert={alert} />} />
+            <Route path="/*" element={<Form />} />
           </Routes>
         </div>
       </Router >
